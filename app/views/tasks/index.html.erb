@@ -1,0 +1,7 @@
+<h1>HomeReno</h1>
+<h4>The app for DIY and home improvement enthusiasts.</h4>
+
+<% @tasks.each do |task| %>
+  <h4><%= task.name %></h4>
+  <p><%= task.description %></p>
+<% end %>
