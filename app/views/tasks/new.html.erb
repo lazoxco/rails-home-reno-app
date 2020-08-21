@@ -1,10 +1,10 @@
 <h1>Create a New Task</h1>
 
 <% if @task.errors.any? %>
-  <li>
-    <%= @task.errors.full_messages%>
-  </li>
-<% end %>
+    <% @task.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+<% end  %>
 
 <%= form_for @task do |f| %>
   <div class="form-group">

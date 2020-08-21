@@ -4,11 +4,16 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    if user_signed_in?
+      @task = Task.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
     if @task.save
       redirect_to :root
     else
@@ -20,6 +25,9 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
   end
+
+  
+  
   private
 
   def task_params
