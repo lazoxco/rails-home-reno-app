@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user = current_user
     if @task.save
-      redirect_to :root
+      redirect_to task_path(@task)
     else
       @task
       render :new
@@ -28,10 +28,10 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    if @task.user.id == current_user.id
+    if user_signed_in? && @task.user.id == current_user.id
       @task
     else
-      redirect_to :root
+      redirect_to new_user_session_path
     end
   end
 
@@ -41,7 +41,11 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
-  
+  def destroy
+    @task = Task.find(params[:id])
+    @task.delete
+    redirect_to :root
+  end
   
   private
 
