@@ -1,9 +1,21 @@
-<h1><%= @task.name %></h1>
-<p><%= @task.description %></p>
+<div class="row">
+  <h1><%= @task.name %></h1>
+  <p><%= @task.description %></p>
 
-<% if user_signed_in? && @task.user.id == current_user.id %>
-  <%= link_to "Edit Task", edit_task_path(@task), class: "btn btn-outline-secondary", method: :get %>
-  <%= link_to "Delete Task", task_path(@task), class: "btn btn-danger", method: :delete %>
-<% end %>
+  <% if user_signed_in? && @task.user.id == current_user.id %>
+    <%= link_to "Edit Task", edit_task_path(@task), class: "btn btn-outline-secondary", method: :get %>
+    <%= link_to "Delete Task", task_path(@task), class: "btn btn-danger", method: :delete %>
+  <% end %>
+</div>
 
-<p>Created by: <%= @task.user.email %></p>
+<div class="row">
+  <h4>Comments:</h4>
+  <% @task.comments.each do |comment| %>
+  <%= comment %>
+  <% end %>
+  <%= button_to "Add Comment", new_task_comment_path(@task) %>
+</div>
+
+<div class="row">
+  <p>Created by: <%= @task.user.email %></p>
+</div>
