@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user.id = current_user
+    @task.user = current_user
     if @task.save
       redirect_to :root
     else

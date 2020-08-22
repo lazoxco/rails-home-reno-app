@@ -6,6 +6,11 @@
   <% @tasks.each do |task| %>
     <h4><%= task.name %></h4>
     <p><%= task.description %></p>
+    <%= link_to "View Task", task_path(task), class: "btn btn-primary", method: :get %>
+      <% if task.user.id == current_user.id %>
+        <%= link_to "Edit Task", edit_task_path(task), class: "btn btn-outline-secondary", method: :get %>
+        <%= link_to "Delete Task", task_path(task), class: "btn btn-danger", method: :delete %>
+    <% end %>
     <hr>
   <% end %>
 </div>
