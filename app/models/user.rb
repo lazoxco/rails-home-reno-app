@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :comments
   has_many :tasks
+  has_many :comments
   has_many :tasks, through: :comments
   
   # Include default devise modules. Others available are:

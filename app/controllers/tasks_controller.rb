@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     if user_signed_in? && @task.user.id == current_user.id
       @task
     else
-      redirect_to new_user_session_path
+      redirect_to task_path(@task)
     end
   end
 
