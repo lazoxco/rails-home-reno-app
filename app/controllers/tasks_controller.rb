@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user = current_user
+    @task.user.id = current_user
     if @task.save
       redirect_to :root
     else
@@ -24,6 +24,21 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+    if @task.user.id == current_user.id
+      @task
+    else
+      redirect_to :root
+    end
+  end
+
+  def update 
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    redirect_to task_path(@task)
   end
 
   
