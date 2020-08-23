@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsHomeRenoApp</title>
+    <title>HomeReno | The Home Improvment App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -40,7 +40,9 @@
       <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
+    </div>
 
+    <div class="container">
       <%= yield %>
     </div>
   </body>

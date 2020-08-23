@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :items
   root to: "tasks#index"
   
   resources :tasks do
     resources :comments
+    resources :items
   end
   
   devise_for :users

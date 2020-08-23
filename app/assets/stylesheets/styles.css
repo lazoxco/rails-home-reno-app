@@ -1,0 +1,13 @@
+body {
+  margin-bottom: 50px;
+}
+
+.row {
+  margin: 20px;
+}
+
+.jumbotron {
+  background-image: url("app/assets/images/fixer-upper-web.jpg");
+  background-size: cover;
+}
+

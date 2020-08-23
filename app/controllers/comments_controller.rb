@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to task_path(@task)
     else
-      flash.now[:danger] = "error"
+      flash.now[:danger] = "errors"
     end
   end
 
