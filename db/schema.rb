@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_08_22_221733) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.boolean "complete", default: false
+    t.integer "status"
     t.integer "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

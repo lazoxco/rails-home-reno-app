@@ -1,1 +1,9 @@
-Sample item
+  <% @task.items.each do |item| %>
+    <% if user_signed_in? && @task.user.id == current_user.id %>
+      <input class="toggle" type="checkbox"> <%= item.name %>
+    <% else %>
+      <li><%= item.name %></li>
+    <% end %>
+    
+    <hr>
+  <% end %>

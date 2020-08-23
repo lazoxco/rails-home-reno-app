@@ -2,24 +2,30 @@
   <h1><%= @task.name %></h1>
   <p><%= @task.description %></p>
   <p><small>Created by: <%= @task.user.email %></small></p>
-  <% if user_signed_in? && @task.user.id == current_user.id %>
-    <%= render 'items/item' %>
+</div>
+
+
+<div class="row">
+
+  <%= render 'items/item' %>
+  <% if user_signed_in? && @task.user.id == current_user.id %>    
     <%= render 'items/form' %>
-  <% end %>
 </div>
 
 <div class="row">
-  <%= link_to "Edit Task", edit_task_path(@task), class: "btn btn-outline-secondary", method: :get %>
-  <%= link_to "Delete Task", task_path(@task), class: "btn btn-danger", method: :delete %>
+  <%= link_to "Edit Project", edit_task_path(@task), class: "btn btn-outline-secondary", method: :get %>
+  <%= link_to "Delete Project", task_path(@task), class: "btn btn-danger", method: :delete %>
 </div>
+<% end %>
+
 
 <div class="row">
-    <h2><strong><%= @task.comments.count %></strong> Comments</h2>
+    <h3><strong><%= @task.comments.count %></strong> Comments</h3>
     <hr>
     <%= render 'comments/comment' %>
     <% if user_signed_in? %>
     <div class="comment-form">
-        <h3>Leave a comment</h3>
+        <h4>Leave a comment</h4>
           <%= render 'comments/form' %>
     </div>
     <% else %>
