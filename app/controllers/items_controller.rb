@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to task_path(@task)
     else
-      flash.now[:danger] = "errors"
+      @item
     end
   end
 

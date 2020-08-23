@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_215614) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "status"
+    t.integer "status", default: 0
     t.integer "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
