@@ -5,5 +5,5 @@ class Task < ApplicationRecord
   # dependent: :destroy means the comments related to the specific task in mention get deleted if the task does.
   has_many :users, through: :comments
 
-  scope :itmes -> { where(status: true) }
+  # scope :itmes -> { where(status: true) }
 end
