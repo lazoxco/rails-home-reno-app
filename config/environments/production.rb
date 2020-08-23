@@ -109,6 +109,4 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  export FACEBOOK_KEY='299460424648692'
-  export FACEBOOK_SECRET='634314c0c8bcc211ee0ea5fac5ff622c'
 end
