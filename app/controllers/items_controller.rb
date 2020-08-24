@@ -10,6 +10,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update 
+    binding.pry
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to task_path(@task)
+  end
+
   def destroy
     @task = Task.find(params[:task_id])
       @item = @task.items.find(params[:id])
@@ -20,6 +27,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name)
+    params.require(:item).permit(:name, :status)
   end
 end
