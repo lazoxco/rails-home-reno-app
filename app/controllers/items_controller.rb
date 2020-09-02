@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def update 
-    binding.pry
     @item = Item.find(params[:id])
     @item.update(item_params)
     redirect_to task_path(@task)
