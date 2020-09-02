@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/auth/:provider/callback', to: 'sessions#create'
+  # get '/auth/:provider/callback', to: 'sessions#create'
 
   resources :items
   root to: "tasks#index"
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   
   # devise_for :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
