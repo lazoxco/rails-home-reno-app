@@ -26,6 +26,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
