@@ -7,7 +7,6 @@ body {
 }
 
 .jumbotron {
-  background-image: url("app/assets/images/fixer-upper-web.jpg");
   background-size: cover;
 }
 
